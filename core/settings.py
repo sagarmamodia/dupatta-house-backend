@@ -93,6 +93,8 @@ DATABASES = {
 MONGO_URI = "mongodb://localhost:27017"
 MONGO_DB = "images"
 
+RAZORPAY_KEY_ID = "razorpay_key_id"
+RAZORPAY_KEY_SECRET = "razorpay_key_secret"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
