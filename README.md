@@ -3,7 +3,7 @@
   1. Install docker and docker-compose on your system
   2. Clone the repository using ```git clone https://github.com/sagarmamodia/dupatta-house-backend.git```
   3. Build the app using ```docker-compose up --build```
-  4. Run the app using ```docker-compose up```
+  4. Run the app using ```docker-compose up```. It will run the app at localhost:8000/
   5. To stop use ```docker-compose stop```
   6. To restart use ```docker-compose start```
   7. To remove the containers ```docker-compose down```
@@ -12,7 +12,7 @@
   1. Make sure your system have python 3.11 or higher installed.
   2. Clone the repository using ```git clone https://github.com/sagarmamodia/dupatta-house-backend.git```.
   3. Run ```pip install -r requirements.txt``` to install the dependencies.
-  4. Run the app using ```python manage.py runserver```
+  4. Run the app using ```python manage.py runserver```. It will run the app at localhost:8000/
 
 # API Docs
 1. POST auth/register/
