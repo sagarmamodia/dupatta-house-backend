@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres 
+    container_name: dupatta-house-postgres
+    environment:
+      POSTGRES_DB: default 
+      POSTGRES_USER: kiraxd7 
+      POSTGRES_PASSWORD: kiraxd7 
+    ports:
+      - "5432:5432"
+
+  mongodb:
+    image: mongo 
+    container_name: dupatta-house-mongodb 
+    ports:
+      - "27017:27017"
+
+  backend:
+    build: . 
+    container_name: dupatta-house-backend 
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_DB: default
+      POSTGRES_USER: kiraxd7 
+      POSTGRES_PASSWORD: kiraxd7 
+      POSTGRES_HOST: dupatta-house-postgres 
+      MONGO_HOST: dupatta-house-mongodb
+

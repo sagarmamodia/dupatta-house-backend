@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from datetime import datetime, timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,15 +83,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'PASSWORD': 'root',
-            'HOST': 'localhost',  # or IP address or Docker service name
+            'NAME': os.getenv('POSTGRES_DB', 'postgres'),
+            'USER': os.getenv('POSTGRES_USER', 'postgres'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres') ,
+            'HOST': os.getenv('POSTGRES_HOST', 'localhost'),  # or IP address or Docker service name
             'PORT': '5432',        # default PostgreSQL port
         }
 }
 
-MONGO_URI = "mongodb://localhost:27017"
+MONGO_URI = f"mongodb://f{os.getenv('MONGO_HOST', 'localhost')}:27017"
 MONGO_DB = "images"
 
 RAZORPAY_KEY_ID = "razorpay_key_id"
